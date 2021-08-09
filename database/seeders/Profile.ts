@@ -1,12 +1,12 @@
 import BaseSeeder from '@ioc:Adonis/Lucid/Seeder'
-import Permission from 'App/Models/Permission'
+import Profile from 'App/Models/Profile'
 
-export default class PermissionSeeder extends BaseSeeder {
+export default class ProfileSeeder extends BaseSeeder {
   public async run() {
     // Write your database queries inside the run method
     const uniqueKey = 'name'
 
-    await Permission.updateOrCreateMany(uniqueKey, [
+    await Profile.updateOrCreateMany(uniqueKey, [
       {
         name: 'super_admin',
         description: 'Faz qualquer solicitação ao banco',

@@ -10,7 +10,7 @@ import {
   BelongsTo,
 } from '@ioc:Adonis/Lucid/Orm'
 
-import Permission from 'App/Models/Permission'
+import Profile from 'App/Models/Profile'
 
 export default class User extends BaseModel {
   @column({ isPrimary: true })
@@ -18,6 +18,9 @@ export default class User extends BaseModel {
 
   @column()
   public secure_id: uuidv4
+
+  @column()
+  public name: string
 
   @column()
   public email: string
@@ -38,10 +41,10 @@ export default class User extends BaseModel {
   public deletedAt: DateTime | null
 
   @column()
-  public permissionId: number
+  public profileId: number
 
-  @belongsTo(() => Permission)
-  public permission: BelongsTo<typeof Permission>
+  @belongsTo(() => Profile)
+  public profile: BelongsTo<typeof Profile>
 
   @beforeSave()
   public static async hashPassword(user: User) {

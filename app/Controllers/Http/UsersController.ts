@@ -1,5 +1,6 @@
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import { DateTime } from 'luxon'
+import CreateUser from 'App/Validators/User/CreateUserValidator'
 
 import User from 'App/Models/User'
 export default class UsersController {
@@ -10,6 +11,8 @@ export default class UsersController {
   }
 
   public async store({ request, response }: HttpContextContract) {
+    await request.validate(CreateUser)
+
     const data = request.all()
 
     try {

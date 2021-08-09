@@ -9,9 +9,10 @@ export default class UsersSchema extends BaseSchema {
 
       table.uuid('secure_id').unique().notNullable()
 
-      table.integer('permission_id').unsigned().notNullable().references('permissions.id')
+      table.integer('profile_id').unsigned().notNullable().references('profiles.id')
 
-      table.string('email', 255).notNullable()
+      table.string('name', 50).notNullable()
+      table.string('email', 255).unique().notNullable()
       table.string('password', 180).notNullable()
       table.string('remember_me_token').nullable()
 
