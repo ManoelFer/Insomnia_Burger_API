@@ -6,4 +6,5 @@
 * CRUD de Usuários
 * Autenticação por Sessão
 * Níveis de acesso
+* Validator para as rotas de alteração e criação de usuários
 
