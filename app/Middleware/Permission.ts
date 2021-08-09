@@ -4,7 +4,7 @@ export default class Permission {
   public async handle({ bouncer, auth }: HttpContextContract, next: () => Promise<void>) {
     // code for middleware goes here. ABOVE THE NEXT CALL
 
-    let user = auth.user ? await auth.user.related('permission').query() : false
+    let user = auth.user ? await auth.user.related('profile').query() : false
 
     if (user) {
       const isSuperAdmin = user

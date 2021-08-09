@@ -31,10 +31,10 @@ import User from 'App/Models/User'
 |****************************************************************
 */
 export const { actions } = Bouncer.define('deleteUser', async (user: User) => {
-  await user.load('permission')
-  const { permission } = user.serialize()
+  await user.load('profile')
+  const { profile } = user.serialize()
 
-  return permission.name === 'super_admin'
+  return profile.name === 'super_admin'
 })
 
 /*

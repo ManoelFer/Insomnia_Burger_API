@@ -7,17 +7,13 @@ export default class CreateUserValidator {
   constructor(protected ctx: HttpContextContract) {}
 
   public schema = schema.create({
-    name: schema.string({}, [rules.required(), rules.minLength(3)]),
+    name: schema.string({}, [rules.minLength(3)]),
     email: schema.string({ trim: true }, [
-      rules.required(),
       rules.email(),
-      rules.unique({ table: 'users', column: 'email' }),
+      rules.unique({ table: 'users', column: 'email', caseInsensitive: true }),
     ]),
-    password: schema.string({}, [rules.required(), rules.minLength(6)]),
-    profile_id: schema.string({}, [
-      rules.required(),
-      rules.exists({ table: 'profiles', column: 'id' }),
-    ]),
+    password: schema.string({}, [rules.minLength(6)]),
+    profileId: schema.string({}, [rules.exists({ table: 'profiles', column: 'id' })]),
   })
 
   public messages = {
@@ -34,8 +30,8 @@ export default class CreateUserValidator {
     'password.required': 'password é obrigatório',
     'password.minLength': 'password deve ter no mínimo 6 caractéres',
 
-    'profile_id.string': 'profile_id deve ser do tipo string',
-    'profile_id.required': 'profile_id é obrigatório',
-    'profile_id.exists': 'o profile_id informado não foi encontrado em nossa base de dados',
+    'profileId.string': 'profileId deve ser do tipo string',
+    'profileId.required': 'profileId é obrigatório',
+    'profileId.exists': 'o profileId informado não foi encontrado em nossa base de dados',
   }
 }
