@@ -1,7 +1,6 @@
-# Adonis_v5_starter
-starter
+# API Base para outros projetos com ADONIS V5
 
-Status: EM DESENVOLVIMENTO
+ **Status:** EM DESENVOLVIMENTO
 
 **Este projeto já vem com:**
 * CRUD de Usuários
