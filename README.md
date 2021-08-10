@@ -45,7 +45,6 @@
       </ul>
     </li>
     <li><a href="#this-project-comes-with">This project comes with</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
