@@ -11,7 +11,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="github_readme_images/logo.png" alt="Logo" width="150" height="67">
+    <img src="github_readme_images/logo.png" alt="Logo" width="170" height="77">
   </a>
 
   <h3 align="center">ADONIS V5 STARTER</h3>
