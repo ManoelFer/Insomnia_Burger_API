@@ -97,24 +97,35 @@ This project was built based entirely on the AdonisJS Version 5 framework.
    ```sh
    git clone https://github.com/ManoelFer/Adonis_v5_starter.git
    ```
-2. Install NPM packages
+2. Access your directory
+   ```sh
+   cd Adonis_v5_starter\
+   ```
+3. Install NPM packages
    ```sh
    npm install
-   ```
-2. Install NPM packages
+   ```   
+4. Duplicate file `.env.example` and rename for `.env`
+
+5. Start your MySQL and create a new database. I use the [@Laragon](https://laragon.org/download/) to manage my database
+
+6. Configure your variables in the `.env` created to connect com your database
+
+7. Run the migrations
    ```sh
-   npm install
+   node ace migration:run
    ```
    
+8. Run the seeds 
+   ```sh
+    node ace db:seed
+   ```
    
-   
-   
-   
-3. Enter your API in `config.js`
+9. Starting http server `config.js`
    ```sh
    node ace serve --watch
    ```
-
+10. For test endpoints
 
 
 <!-- USAGE EXAMPLES -->
