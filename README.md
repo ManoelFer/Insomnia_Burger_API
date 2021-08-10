@@ -145,21 +145,10 @@ Contributions are what make the open source community such an amazing place to b
 5. Open a Pull Request
 
 
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-
-
 <!-- CONTACT -->
 ## Contact
 
 Manoel Fernandes Neto - [@skype](https://join.skype.com/invite/yWROwxD2Ztlp) - manoel.fernandes@luby.software
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
 
 
 
