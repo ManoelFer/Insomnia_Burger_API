@@ -107,17 +107,15 @@ This project was built based entirely on the AdonisJS Version 5 framework.
 
 <!-- USAGE EXAMPLES -->
 ## This project comes with
+* Authentication with API tokens
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+* CRUD of Users
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+* Authorization with adonisjs/bouncer
 
+* Validator
 
-
-<!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
+* INSOMNIA JSON FILE IN PROJECT ROOT
 
 
 
