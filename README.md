@@ -119,7 +119,7 @@ This project was built based entirely on the AdonisJS Version 5 framework.
    ```sh
     node ace db:seed
    ```
-9. Starting http server `config.js`
+9. Starting http server
   ```sh
    node ace serve --watch
    ```
