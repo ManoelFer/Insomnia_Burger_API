@@ -1,10 +1,13 @@
-# API Base para outros projetos com ADONIS V5
+# STARTER API ADONIS V5
 
- **Status:** EM DESENVOLVIMENTO
+**This project comes with:**
+* Authentication with API tokens
 
-**Este projeto já vem com:**
-* CRUD de Usuários
-* Autenticação por Sessão
-* Níveis de acesso
-* Validator para as rotas de alteração e criação de usuários
+* CRUD of Users
+
+
+* Authorization with adonisjs/bouncer
+
+
+* Validator
 
