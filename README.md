@@ -15,11 +15,11 @@
   </a>
 
   <h3 align="center">ADONIS V5 STARTER</h3>
-
+  
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    An awesome ADONIS V5 API to jumpstart your projects!
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://adonisjs.com/"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
