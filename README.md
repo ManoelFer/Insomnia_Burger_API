@@ -115,22 +115,15 @@ This project was built based entirely on the AdonisJS Version 5 framework.
    ```sh
    node ace migration:run
    ```
-   
 8. Run the seeds 
    ```sh
     node ace db:seed
    ```
-   
 9. Starting http server `config.js`
-   ```sh
+  ```sh
    node ace serve --watch
    ```
-   
-10. Starting http server `config.js`
-   ```sh
-   node ace serve --watch
-   ```
-10. To test endpoints, import this [json](INSOMNIA_JSON/Insomnia.json) into your [insomnia](https://insomnia.rest/download)
+11. To test endpoints, import this [json](INSOMNIA_JSON/Insomnia.json) into your [insomnia](https://insomnia.rest/download)
 
 
 <!-- USAGE EXAMPLES -->
