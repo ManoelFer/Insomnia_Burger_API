@@ -156,7 +156,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Manoel Fernandes Neto - [@your_twitter](https://join.skype.com/invite/yWROwxD2Ztlp) - manoel.fernandes@luby.software
+Manoel Fernandes Neto - [@skype](https://join.skype.com/invite/yWROwxD2Ztlp) - manoel.fernandes@luby.software
 
 Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
 
