@@ -1,7 +1,9 @@
 # STARTER API ADONIS V5
 
 **This project comes with:**
+
 * Authentication with API tokens
+
 
 * CRUD of Users
 
@@ -10,4 +12,7 @@
 
 
 * Validator
+
+
+* INSOMNIA JSON FILE IN PROJECT ROOT
 
