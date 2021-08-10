@@ -129,7 +129,7 @@ This project was built based entirely on the AdonisJS Version 5 framework.
 
 * Validator
 
-* INSOMNIA JSON FILE IN PROJECT ROOT
+* INSOMNIA Json file in project root
 
 
 
