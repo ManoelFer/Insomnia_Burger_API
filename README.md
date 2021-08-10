@@ -119,10 +119,12 @@ This project was built based entirely on the AdonisJS Version 5 framework.
    ```sh
     node ace db:seed
    ```
-0. Starting http server 
+9. Starting http server 
    ```sh
     node ace db:seed
    ```
+10. To test endpoints, import this [json](INSOMNIA_JSON/Insomnia.json) into your [insomnia](https://insomnia.rest/download) 
+
 9. Starting http server
   ```sh
    node ace serve --watch
