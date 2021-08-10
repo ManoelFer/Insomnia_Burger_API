@@ -82,16 +82,20 @@ This project was built based entirely on the AdonisJS Version 5 framework.
 
 ### Prerequisites
 
+* [NodeJS](https://nodejs.org/pt-br/)
+
 * npm
+
+* git
   ```sh
-  npm install npm@latest -g
+  npm i git
   ```
 
 ### Installation
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/ManoelFer/Adonis_v5_starter.git
    ```
 2. Install NPM packages
    ```sh
