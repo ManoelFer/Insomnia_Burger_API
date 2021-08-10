@@ -99,8 +99,8 @@ This project was built based entirely on the AdonisJS Version 5 framework.
    npm install
    ```
 4. Enter your API in `config.js`
-   ```JS
-   const API_KEY = 'ENTER YOUR API';
+   ```sh
+   node ace serve --watch
    ```
 
 
