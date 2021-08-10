@@ -11,10 +11,10 @@
 <br />
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="github_readme_images/logo.png" alt="Logo" width="120" height="37">
+    <img src="github_readme_images/logo.png" alt="Logo" width="150" height="67">
   </a>
 
-  <h3 align="center">ADONIS V5 STARTER/h3>
+  <h3 align="center">ADONIS V5 STARTER</h3>
 
   <p align="center">
     An awesome README template to jumpstart your projects!
