@@ -1,5 +1,5 @@
 
-[![LinkedIn][linkedin-shield]][linkedinw
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
 
 
