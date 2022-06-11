@@ -9,16 +9,20 @@ export default class ProfileSeeder extends BaseSeeder {
     await Profile.updateOrCreateMany(uniqueKey, [
       {
         name: 'super_admin',
-        description: 'Faz qualquer solicitação ao banco',
+        description: 'Faz qualquer requisição',
       },
       {
         name: 'admin',
-        description: 'Faz qualquer solicitação ao banco, exceto excluir um usuário',
+        description: 'Faz qualquer requisição, exceto excluir um usuário',
       },
       {
         name: 'employee',
-        description: 'Executa somente querys de consulta',
+        description: 'Cadastra e edita produtos, cadastra e edita categorias',
       },
+      {
+        name: 'client',
+        description: 'Faz cadastro, Edita perfil, Vê cardápio, Faz pedidos',
+      }
     ])
   }
 }
