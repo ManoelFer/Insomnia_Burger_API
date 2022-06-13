@@ -19,50 +19,23 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
+import Application from '@ioc:Adonis/Core/Application'
+import fs from 'fs'
 
-//TODO Test Routes
-Route.get('/', ({ response }) => {
-  response.status(200).send('Bem-vindo a melhor API de gerenciamento de restaurantes!')
+import 'App/Modules/routes/users.routes'
+import 'App/Modules/routes/auth.routes'
+
+
+//TODO: Test Routes
+Route.get('/', async ({ view }) => {
+  const html = await view.render('welcome_insomnias', {
+    greeting: 'Hello'
+  })
+  return html
 })
 
-//TODO Public Routes
-Route.group(() => {
-  Route.post('/login', 'AuthController.login')
-
-  /**
-   * Return users list! Example:
-   * 
-   */
-  Route.post('/users', 'UsersController.store')
-}).prefix('/v1')
-
-//TODO Auth Routes
-Route.group(() => {
-  /**
-   * Return users list! Example:
-   * 
-   */
-  Route.get('/users', 'UsersController.index')
-
-  /**
-  * Return users list! Example:
-  * 
-  */
-  Route.get('/users/:id', 'UsersController.show')
-
-  /**
-  * Return users list! Example:
-  * 
-  */
-  Route.put('/users/:id', 'UsersController.update')
-
-  /**
-  * Return users list! Example:
-  * 
-  */
-  Route.delete('/users/:id', 'UsersController.destroy')
-
-  //
+//TODO: Test Routes
+Route.get('/menu', async ({ response }) => {
+  const menu = Application.publicPath('Cardapio_Insomnias.png')
+  response.download(menu)
 })
-  .prefix('/v1')
-  .middleware(['auth', 'permission'])

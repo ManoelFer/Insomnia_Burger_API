@@ -1,5 +1,5 @@
 {
-  "name": "ADONISV5_API",
+  "name": "Insomnia_Burger_API",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -23,12 +23,14 @@
     "youch-terminal": "^1.1.1"
   },
   "dependencies": {
+    "@adonisjs/application": "^5.2.5",
     "@adonisjs/auth": "^8.0.7",
     "@adonisjs/bouncer": "^2.2.4",
     "@adonisjs/core": "^5.1.11",
     "@adonisjs/lucid": "^15.0.3",
     "@adonisjs/repl": "^3.1.5",
     "@adonisjs/session": "^6.1.1",
+    "@adonisjs/view": "^6.1.5",
     "luxon": "^2.0.1",
     "mysql": "^2.18.1",
     "phc-argon2": "^1.1.2",

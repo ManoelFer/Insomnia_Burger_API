@@ -3,9 +3,12 @@ import BaseSchema from '@ioc:Adonis/Lucid/Schema'
 export default class Products extends BaseSchema {
   protected tableName = 'products'
 
-  public async up () {
+  public async up() {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
+      table.integer('category_id').unsigned().references('id').inTable('categories').onDelete('CASCADE')
+      table.string('name').notNullable()
+      table.decimal('price', 8, 2).defaultTo(0)
 
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
@@ -15,7 +18,7 @@ export default class Products extends BaseSchema {
     })
   }
 
-  public async down () {
+  public async down() {
     this.schema.dropTable(this.tableName)
   }
 }
