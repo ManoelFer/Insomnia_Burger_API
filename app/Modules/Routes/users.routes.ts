@@ -1,7 +1,7 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
-//TODO: Public Routes
+//TODO: Public Routes Users
 Route.group(() => {
     /**
      * Create User Body:
@@ -16,7 +16,7 @@ Route.group(() => {
 }).prefix('/v1')
 
 
-//TODO: Private Routes
+//TODO: Private Routes Users
 Route.group(() => {
     /**
      * Return users list! Example:
