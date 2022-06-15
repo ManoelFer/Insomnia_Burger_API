@@ -13,6 +13,9 @@ export default class UsersSchema extends BaseSchema {
 
       table.string('name', 50).notNullable()
       table.string('email', 255).unique().notNullable()
+      table.string('phone', 50).unique().notNullable()
+      table.string('cpf', 50).unique()
+      table.string('cnpj', 50).unique()
       table.string('password', 180).notNullable()
       table.string('remember_me_token').nullable()
 
@@ -21,7 +24,6 @@ export default class UsersSchema extends BaseSchema {
        */
       table.timestamp('created_at', { useTz: true }).notNullable()
       table.timestamp('updated_at', { useTz: true })
-      table.timestamp('deleted_at').defaultTo(null)
     })
   }
 

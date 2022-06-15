@@ -1,5 +1,4 @@
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import { DateTime } from 'luxon'
 import CreateUser from 'App/Validators/User/CreateUserValidator'
 import UpdateUser from 'App/Validators/User/UpdateUserValidator'
 
@@ -12,7 +11,7 @@ export default class UsersController {
   }
 
   public async store({ request, response }: HttpContextContract) {
-    const data = request.all()
+    const data = request.only(['name', 'email', 'phone', 'cpf', 'cnpj', 'password', 'profileId'])
 
     await request.validate(CreateUser)
 
@@ -29,9 +28,9 @@ export default class UsersController {
     }
   }
 
-  public async show({ response }: HttpContextContract) {
+  public async show({ response, params }: HttpContextContract) {
     try {
-      const users = await User.findOrFail(1)
+      const users = await User.query().preload('profile').where('id', params.id).firstOrFail()
 
       return response.ok(users)
     } catch (error) {
@@ -44,7 +43,7 @@ export default class UsersController {
   }
 
   public async update({ params, request, response }: HttpContextContract) {
-    const data = request.all()
+    const data = request.only(['name', 'email', 'phone', 'cpf', 'cnpj', 'password', 'profileId'])
 
     await request.validate(UpdateUser)
 
@@ -63,14 +62,12 @@ export default class UsersController {
     }
   }
 
-  //TODO UsersController: Activates and deactivates a user
+
   public async destroy({ params, response }: HttpContextContract) {
     try {
       const user = await User.findByOrFail('secure_id', params.id)
 
-      user.deletedAt = user.deletedAt ? null : DateTime.now()
-
-      await user.save()
+      await user.delete()
 
       return response.ok(user)
     } catch (error) {

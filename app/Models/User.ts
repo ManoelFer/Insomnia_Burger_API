@@ -25,6 +25,15 @@ export default class User extends BaseModel {
   @column()
   public email: string
 
+  @column()
+  public phone: string
+
+  @column()
+  public cpf: string
+
+  @column()
+  public cnpj: string
+
   @column({ serializeAs: null })
   public password: string
 
@@ -36,9 +45,6 @@ export default class User extends BaseModel {
 
   @column.dateTime({ autoUpdate: true, serializeAs: null })
   public updatedAt: DateTime
-
-  @column.dateTime({})
-  public deletedAt: DateTime | null
 
   @column()
   public profileId: number

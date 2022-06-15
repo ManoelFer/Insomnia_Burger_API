@@ -7,9 +7,9 @@ Route.group(() => {
      * Create User Body:
         {
             "name": string,
-            "email": valid e-mail,
+            "email": string,
             "password": string,
-            "profileId": existing profile id
+            "profileId": integer
         }
      */
     Route.post('/users', 'UsersController.store')
@@ -19,26 +19,35 @@ Route.group(() => {
 //TODO: Private Routes Users
 Route.group(() => {
     /**
-     * Return users list! Example:
-     * 
+     * Return users list! Response:
+    [
+        {
+            "id": integer,
+            "secure_id": uuid,
+            "profile_id": integer,
+            "name": string,
+            "email": string,
+            "remember_me_token": uuid
+        },
+        ...
+    ]
      */
     Route.get('/users', 'UsersController.index')
 
     /**
-    * Return users list! Example:
+    * User return by id! Example:
     * 
     */
     Route.get('/users/:id', 'UsersController.show')
 
     /**
-    * Return users list! Example:
+    * Update user by id! Example:
     * 
     */
     Route.put('/users/:id', 'UsersController.update')
 
     /**
-    * Return users list! Example:
-    * 
+    * Delete user by id!
     */
     Route.delete('/users/:id', 'UsersController.destroy')
 })
