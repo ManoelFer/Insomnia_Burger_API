@@ -1,15 +1,20 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
+const resource = 'users'
+const controller = 'UsersController'
+
 //TODO: Public Routes Users
 Route.group(() => {
     /**
      * Create User Body:
         {
-            "name": string,
-            "email": string,
-            "password": string,
-            "profileId": integer
+            "name": "string",
+            "email": "string",
+            "password": "string"
+            "phone": "",
+            "cpf": "",
+            "cnpj": "",
         }
      */
     Route.post('/users', 'UsersController.store')
@@ -18,38 +23,25 @@ Route.group(() => {
 
 //TODO: Private Routes Users
 Route.group(() => {
-    /**
-     * Return users list! Response:
-    [
-        {
-            "id": integer,
-            "secure_id": uuid,
-            "profile_id": integer,
-            "name": string,
-            "email": string,
-            "remember_me_token": uuid
-        },
-        ...
-    ]
-     */
-    Route.get('/users', 'UsersController.index')
 
-    /**
-    * User return by id! Example:
-    * 
-    */
+    Route.get(`/${resource}`, `${controller}.index`)
     Route.get('/users/:id', 'UsersController.show')
 
     /**
-    * Update user by id! Example:
-    * 
+    * Update User Body:
+       {
+           "name": "string",
+           "email": "string",
+           "password": "string"
+           "phone": "",
+           "cpf": "",
+           "cnpj": "",
+       }
     */
     Route.put('/users/:id', 'UsersController.update')
 
-    /**
-    * Delete user by id!
-    */
-    Route.delete('/users/:id', 'UsersController.destroy')
+
+    Route.delete('/users/:id', 'UsersController.destroy').middleware('permission')
 })
     .prefix('/v1')
-    .middleware(['auth', 'permission'])
+    .middleware(['auth'])

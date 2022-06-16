@@ -24,7 +24,6 @@ export default class UpdateUserValidator extends MessagesCustom {
         },
       }),
     ]),
-    password: schema.string.optional({}, [rules.minLength(6)]),
-    profile_id: schema.string.optional({}, [rules.exists({ table: 'profiles', column: 'id' })]),
+    password: schema.string.optional({}, [rules.minLength(6)])
   })
 }

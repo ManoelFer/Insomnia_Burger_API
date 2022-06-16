@@ -32,7 +32,8 @@
       "@adonisjs/lucid",
       "@adonisjs/session",
       "@adonisjs/bouncer",
-      "@adonisjs/view"
+      "@adonisjs/view",
+      "adonis-lucid-filter"
     ]
   }
 }

@@ -3,6 +3,8 @@ import Application from '@ioc:Adonis/Core/Application'
 
 import 'App/Modules/routes/users.routes'
 import 'App/Modules/routes/auth.routes'
+import 'App/Modules/routes/categories.routes'
+import 'App/Modules/routes/products.routes'
 
 
 //TODO: Test Routes

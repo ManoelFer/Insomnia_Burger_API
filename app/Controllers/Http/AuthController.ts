@@ -11,7 +11,7 @@ export default class AuthController {
 
     // Lookup user manually
     try {
-      user = await User.query().where('email', email).preload('profile').firstOrFail()
+      user = await User.query().where('email', email).preload('profiles').firstOrFail()
     } catch (error) {
       console.log('error', error)
       response.unauthorized({ message: 'Invalid credentials' })

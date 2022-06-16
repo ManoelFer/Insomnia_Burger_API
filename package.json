@@ -31,6 +31,7 @@
     "@adonisjs/repl": "^3.1.5",
     "@adonisjs/session": "^6.1.1",
     "@adonisjs/view": "^6.1.5",
+    "adonis-lucid-filter": "^4.1.0",
     "luxon": "^2.0.1",
     "mysql": "^2.18.1",
     "phc-argon2": "^1.1.2",

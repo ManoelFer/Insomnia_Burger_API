@@ -2,20 +2,15 @@ import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 export default class Permission {
   public async handle({ bouncer, auth }: HttpContextContract, next: () => Promise<void>) {
-    // code for middleware goes here. ABOVE THE NEXT CALL
 
-    let user = auth.user ? await auth.user.related('profile').query() : false
+    let user = auth.user ? await auth.user.related('profiles').query() : false
 
     if (user) {
-      const isSuperAdmin = user
-        ? user[0].serialize().name === 'super_admin'
-          ? true
-          : false
-        : false
+      let isSuperAdmin = false
 
-      if (isSuperAdmin) return next()
+      user.find(({ name }) => { if (name === 'super_admin') isSuperAdmin = true })
 
-      await bouncer.authorize('deleteUser')
+      await bouncer.authorize('deleteUser', isSuperAdmin)
 
       await next()
     }

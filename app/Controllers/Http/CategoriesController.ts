@@ -6,8 +6,17 @@ import CreateCategory from 'App/Validators/Category/CreateCategoryValidator'
 import UpdateCategory from 'App/Validators/Category/UpdateCategoryValidator'
 
 export default class CategoriesController {
-    public async index({ response }: HttpContextContract) {
-        const categories = await Category.all()
+    public async index({ response, request }: HttpContextContract): Promise<Category[] | void> {
+        const { page, perPage } = request.qs()
+        const noPaginate = request.qs().noPaginate ? true : false
+        let categories
+
+        try {
+            if (noPaginate) return Category.query().filter(request.qs())
+            categories = await Category.query().filter(request.qs()).paginate(page || 1, perPage || 5)
+        } catch (error) {
+            response.status(error.status || 400).json({ message: error.message || 'Erro na listagem de categories' })
+        }
 
         return response.ok(categories)
     }

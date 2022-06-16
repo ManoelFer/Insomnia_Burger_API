@@ -6,13 +6,18 @@ import {
   beforeCreate,
   beforeSave,
   BaseModel,
-  belongsTo,
-  BelongsTo,
+  manyToMany,
+  ManyToMany,
 } from '@ioc:Adonis/Lucid/Orm'
 
 import Profile from 'App/Models/Profile'
+import UserFilter from './Filters/UserFilter'
+import { compose } from '@ioc:Adonis/Core/Helpers'
+import { Filterable } from '@ioc:Adonis/Addons/LucidFilter'
 
-export default class User extends BaseModel {
+export default class User extends compose(BaseModel, Filterable) {
+  public static $filter = () => UserFilter
+
   @column({ isPrimary: true })
   public id: number
 
@@ -46,11 +51,10 @@ export default class User extends BaseModel {
   @column.dateTime({ autoUpdate: true, serializeAs: null })
   public updatedAt: DateTime
 
-  @column()
-  public profileId: number
-
-  @belongsTo(() => Profile)
-  public profile: BelongsTo<typeof Profile>
+  @manyToMany(() => Profile, {
+    pivotTable: 'user_profiles'
+  })
+  public profiles: ManyToMany<typeof Profile>
 
   @beforeSave()
   public static async hashPassword(user: User) {
