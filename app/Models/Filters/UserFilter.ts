@@ -8,4 +8,10 @@ export default class UserFilter extends BaseModelFilter {
   public name(value: string): void {
     this.$query.where('name', 'LIKE', `%${value}%`)
   }
+
+  public profile(value: []): void {
+    this.$query.whereHas('profiles', (queryProfile) => {
+      queryProfile.whereIn('name', value)
+    })
+  }
 }
